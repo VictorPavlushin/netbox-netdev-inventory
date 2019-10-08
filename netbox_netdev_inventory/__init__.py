@@ -1,4 +1,4 @@
-__author__ = """Scaleway"""
-__email__ = "contact@scaleway.com"
+__author__ = """Victor"""
+__email__ = "victor@pavlushin.info"
 __version__ = "0.2.1"
 __appname__ = "netbox-netdev-inventory"

@@ -1,6 +1,3 @@
-====================
-Redesign in progress
-====================
 ================================================
 Netbox network production importer and inventory
 ================================================
@@ -43,7 +40,7 @@ Device's data:
 
 
 Devices interconnections:
-  - Build an interconnection graph by using LLDP to add (and optionally clean)
+  - Build an interconnection graph by using LLDP and CDP to add (and optionally clean)
     interconnections between devices in Netbox
 
 
