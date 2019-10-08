@@ -20,21 +20,10 @@ Used by `Online.net <https://www.online.net>`_ on more than 5000 network
 devices.
 
 
-Looking for a new maintainer
-----------------------------
-
-This project has be done initially for `Online.net <https://www.online.net>`_,
-a company I (@aruhier) am not working for anymore. Therefore, I have now no
-need for this project, and will not be able to test any pull request.
-
-If anyone is interested to maintain it, please contact me by email (my address
-can be found in `my github profile <https://github.com/Anthony25>`_).
-
-
 Documentation
 -------------
 
-Documentation is available `here  <https://netboxnetimporter.readthedocs.io/>`_.
+Documentation is available `here  <https://netbox-netdev-inventory.readthedocs.io/en/latest/>`_.
 
 
 Features
@@ -66,7 +55,7 @@ Compatibility
 Tested on:
 
   - Cisco IOS (catalyst, 2960)
-  - Cisco Nexus 9000
+  - Cisco Nexus (6000, 9000)
   - Cisco ASR (but no specific parser written, some features are not available)
   - Juniper
 
@@ -76,17 +65,15 @@ Installation
 
 Run::
 
-  pip3 install netbox-netprod-importer
+  pip3 install netbox-netdev-inventory
 
-netbox-netprod-importer is tested under python 3.5 to 3.7
+netbox-netdev-inventory is tested under python 3.5 to 3.7
 
 
 Contributors
 ------------
 
-Tool initially developed by `Online.net  <https://www.online.net>`_ .
-
-* Anthony Ruhier <anthony.ruhier@gmail.com>
+* Victor Pavlushin <victor@pavlushin.info>
 
 
 License
