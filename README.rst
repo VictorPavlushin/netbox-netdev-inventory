@@ -2,8 +2,8 @@
 Netbox network production importer
 ==================================
 
-.. image:: https://travis-ci.org/aruhier/netbox-netprod-importer.svg?branch=master
-    :target: https://travis-ci.org/aruhier/netbox-netprod-importer
+.. image:: https://travis-ci.org/VictorPavlushin/netbox-netdev-inventory.svg?branch=master
+    :target: https://travis-ci.org/VictorPavlushin/netbox-netdev-inventory
 
 netbox-netprod-importer is a tool dedicated to help moving your current
 knowledge base to `Netbox <https://netbox.readthedocs.io/en/latest/>`_ as an
