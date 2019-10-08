@@ -15,10 +15,6 @@ To be the most platform agnostic as possible, data are fetched through
 `Napalm <https://napalm.readthedocs.io/en/latest/>`_, with some custom parsers
 when more info are needed.
 
-Used by `Online.net <https://www.online.net>`_ on more than 5000 network
-devices.
-
-
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
