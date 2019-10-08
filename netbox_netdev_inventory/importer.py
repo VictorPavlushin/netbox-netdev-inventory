@@ -4,11 +4,11 @@ import logging
 import socket
 import napalm
 
-from netbox_netprod_importer.exceptions import (
+from netbox_netdev_inventory.exceptions import (
     NoReverseFoundError, DeviceNotSupportedError
 )
-from netbox_netprod_importer.vendors import DeviceParsers, StubParser
-from netbox_netprod_importer.tools import is_macaddr
+from netbox_netdev_inventory.vendors import DeviceParsers, StubParser
+from netbox_netdev_inventory.tools import is_macaddr
 
 logger = logging.getLogger("netbox_importer")
 

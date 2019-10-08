@@ -10,7 +10,7 @@ import sys
 import argparse
 from boltons.cacheutils import LRU
 from netboxapi import NetboxAPI, NetboxMapper
-from netbox_netprod_importer.config import get_config
+from netbox_netdev_inventory.config import get_config
 import requests
 import yaml
 

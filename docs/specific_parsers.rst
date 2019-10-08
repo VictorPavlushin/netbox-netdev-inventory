@@ -12,11 +12,11 @@ Napalm. A list of drivers can be found
 `here <https://napalm.readthedocs.io/en/latest/support/index.html>`_.
 
 Napalm, however, does not support all features needed by
-netbox-netprod-importer. Because of that, some specific parsers have been
+netbox-netdev-inventory. Because of that, some specific parsers have been
 written to either get more data or enhanced some features to improve the
 import.
 
-netbox-netprod-importer has been tested on:
+netbox-netdev-inventory has been tested on:
   - Cisco IOS (catalyst, 2960)
   - Cisco Nexus 9000
   - Cisco ASR
@@ -26,7 +26,7 @@ netbox-netprod-importer has been tested on:
 List of specific parsers
 ------------------------
 
-They can be found in ``netbox_netprod_importer/vendors/``. Fully supported
+They can be found in ``netbox_netdev_inventory/vendors/``. Fully supported
 devices are:
 
   - Cisco IOS (catalyst, 2960)

@@ -20,10 +20,10 @@ Create a device in Netbox
 -------------------------
 
 Before importing the data of a device, it should be created in Netbox.
-netbox-netprod-importer will not create a device for the user, as it is
+netbox-netdev-inventory will not create a device for the user, as it is
 difficult to do so by staying infrastructure agnostic. It just needs a
 hostname and all fields required by Netbox, the rest being part of the listed
-features will be populated by netbox-netprod-importer.
+features will be populated by netbox-netdev-inventory.
 
 
 Usage
@@ -31,7 +31,7 @@ Usage
 
 An import can be started through the subcommand ``import``::
 
-    usage: netbox-netprod-importer import [-h] [-u user] [-p] [-t THREADS] [--overwrite] [-v LEVEL] [ -f DEVICES | -F FILTER ]
+    usage: netbox-netdev-inventory import [-h] [-u user] [-p] [-t THREADS] [--overwrite] [-v LEVEL] [ -f DEVICES | -F FILTER ]
 
     arguments:
       -f devices, --file devices
@@ -91,21 +91,21 @@ Considering a yaml file ``~/importer/devices.yml`` containing these devices::
 
 To simply apply the import on these devices, do::
 
-    $ netbox-netprod-importer import -f ~/importer/devices.yml
+    $ netbox-netdev-inventory import -f ~/importer/devices.yml
 
 Considering that the current user is named ``foo``, if a password is needed for
 this user to connect to these devices, do::
 
-    $ netbox-netprod-importer import -p -f ~/importer/devices.yml
+    $ netbox-netdev-inventory import -p -f ~/importer/devices.yml
 
 To use a different user, for example `bar` do::
 
-    $ netbox-netprod-importer import -u bar -p -f ~/importer/devices.yml
+    $ netbox-netdev-inventory import -u bar -p -f ~/importer/devices.yml
 
 And to use more threads and enable the overwrite mode to get a clean clone of a
 device state::
 
-    $ netbox-netprod-importer import -u bar -p -t 30 --overwrite -f ~/importer/devices.yml
+    $ netbox-netdev-inventory import -u bar -p -t 30 --overwrite -f ~/importer/devices.yml
 
 Considering a yaml file ``~/importer/filter.yml`` containing this filter::
 
@@ -148,7 +148,7 @@ in /api/docs/, section GET /dcim/devices/
 We will choose London and birmingham sites in England, the equipment is active,
 the owner is it, the manufacturer is cisco and has a primary ip::
 
-    $ netbox-netprod-importer import -u bar -p -t 30 --overwrite -F ~/importer/filter.yml
+    $ netbox-netdev-inventory import -u bar -p -t 30 --overwrite -F ~/importer/filter.yml
 
 Configuration
 -------------
@@ -195,7 +195,7 @@ The importer fetch the following type of data:
 Interface form factor
 ~~~~~~~~~~~~~~~~~~~~~
 
-netbox-netprod-importer can find the form factor by fetching it from the device
+netbox-netdev-inventory can find the form factor by fetching it from the device
 and by selecting the matching type on Netbox. A form factor can be for example
 1000Base-T, SFP, SFP+, etc.
 

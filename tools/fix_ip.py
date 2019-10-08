@@ -6,7 +6,7 @@ import logging
 import yaml
 import sys
 from netboxapi import NetboxAPI, NetboxMapper
-from netbox_netprod_importer.config import get_config
+from netbox_netdev_inventory.config import get_config
 from tqdm import tqdm
 
 

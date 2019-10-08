@@ -4,7 +4,7 @@
 Quickstart
 ==========
 
-.. currentmodule:: netbox_netprod_importer
+.. currentmodule:: netbox_netdev_inventory
 
 Netbox should reflect the status of your production. Its philosophy is that
 your production should be configured related to Netbox, but Netbox should not
@@ -15,7 +15,7 @@ base. For this case, if you trust how your production is configured, Netbox can
 be populated the 1st time from what is currently running, to then make Netbox
 the single source of truth and base the production around it.
 
-netbox-netprod-importer has 2 main functions:
+netbox-netdev-inventory has 2 main functions:
   - :ref:`import devices data <import>`
   - :ref:`interconnect <interconnect>`
 
@@ -33,13 +33,13 @@ Installation
 
 Run::
 
-  pip3 install netbox_netprod_importer
+  pip3 install netbox_netdev_inventory
 
 Or by using setuptools::
 
   python3 ./setup.py install
 
-netbox-netprod-importer is tested under python 3.4 to 3.7
+netbox-netdev-inventory is tested under python 3.4 to 3.7
 
 
 Configuration
@@ -88,11 +88,11 @@ The configuration is quite minimal yaml file::
 
 Adapt it and save it either as:
 
-  - `~/.config/netbox-netprod-importer/config.yml`
-  - `/etc/netbox-netprod-importer/config.yml`
+  - `~/.config/netbox-netdev-inventory/config.yml`
+  - `/etc/netbox-netdev-inventory/config.yml`
 
 Or can be set with the environment variable ``CONFIG_PATH``. Example:
-``CONFIG_PATH=./config.yml netbox-netprod-importer …``
+``CONFIG_PATH=./config.yml netbox-netdev-inventory …``
 
 To turn off unverified HTTPS warning messages request:
 `InsecureRequestWarning: Unverified HTTPS request is being made. Advised
@@ -108,7 +108,7 @@ Device list
 
 .. _quickstart_device_list:
 
-To import the state of some devices, netbox-netprod-importer takes a yaml that
+To import the state of some devices, netbox-netdev-inventory takes a yaml that
 lists which hosts to target. One device is declared like the following::
 
     switch-fqdn:
@@ -120,7 +120,7 @@ lists which hosts to target. One device is declared like the following::
       discovery_protocol: lldp, cdp or multiple
 
 
-Read the documentation of each subparser to use it in netbox-netprod-importer.
+Read the documentation of each subparser to use it in netbox-netdev-inventory.
 
 discovery_protocol can take the values "lldp", "cdp" or "multiple". Since the CDP protocol
 is proprietary, it is only supported by CISSCO equipment. CDP detection only
@@ -131,7 +131,7 @@ Filter
 
 .. _quickstart_filter:
 
-To import the status of some devices, netbox-netprod-importer accepts yaml,
+To import the status of some devices, netbox-netdev-inventory accepts yaml,
 which lists the criteria for selecting devices to target. It looks like this::
 
     #Mandatory section, but may be empty.
@@ -215,7 +215,7 @@ To declare 2 switches, define a yaml named `devices.yaml`::
 
 Then to use it::
 
-    $ netbox-netprod-importer import -f devices.yaml
+    $ netbox-netdev-inventory import -f devices.yaml
 
 
 Import and interconnect
@@ -227,17 +227,17 @@ feature can be found :ref:`here <import>`.
 
 Import a list of devices::
 
-    $ netbox-netprod-importer import -f devices.yaml
+    $ netbox-netdev-inventory import -f devices.yaml
 
 Once all devices interfaces are created, with the previous command, neighbours
 can be discovered and interconnected between each other::
 
-    $ netbox-netprod-importer interconnect -f devices.yaml
+    $ netbox-netdev-inventory interconnect -f devices.yaml
 
 Full documentation for the interconnect feature can be found
 :ref:`here <interconnect>`.
 
 You can also run an inventory, which first starts the import and then the interconnect::
 
-    $ netbox-netprod-importer inventory -F filter.yaml
+    $ netbox-netdev-inventory inventory -F filter.yaml
 

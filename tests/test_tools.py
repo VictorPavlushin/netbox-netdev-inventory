@@ -1,4 +1,4 @@
-from netbox_netprod_importer.tools import (
+from netbox_netdev_inventory.tools import (
     is_macaddr, macaddr_to_int
 )
 

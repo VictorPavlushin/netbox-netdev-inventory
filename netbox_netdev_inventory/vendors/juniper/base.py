@@ -6,9 +6,9 @@ import lxml.etree
 from jnpr.junos.exception import RpcError
 import re
 
-from netbox_netprod_importer.vendors import _AbstractVendorParser
-from netbox_netprod_importer.vendors.constants import NetboxInterfaceTypes
-from netbox_netprod_importer.exceptions import TypeCouldNotBeParsedError
+from netbox_netdev_inventory.vendors import _AbstractVendorParser
+from netbox_netdev_inventory.vendors.constants import NetboxInterfaceTypes
+from netbox_netdev_inventory.exceptions import TypeCouldNotBeParsedError
 from .constants import InterfacesRegex
 
 

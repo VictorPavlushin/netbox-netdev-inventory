@@ -6,10 +6,10 @@ from tqdm import tqdm
 import yaml
 import sys
 
-from netbox_netprod_importer.importer import DeviceImporter
+from netbox_netdev_inventory.importer import DeviceImporter
 
 from netboxapi import NetboxAPI
-from netbox_netprod_importer.config import get_config
+from netbox_netdev_inventory.config import get_config
 
 logger = logging.getLogger("netbox_importer")
 

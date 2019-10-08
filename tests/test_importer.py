@@ -5,10 +5,10 @@ import napalm
 import pytest
 import json
 
-from netbox_netprod_importer.importer import (
+from netbox_netdev_inventory.importer import (
     napalm as importer_napalm, DeviceImporter
 )
-from netbox_netprod_importer.exceptions import NoReverseFoundError
+from netbox_netdev_inventory.exceptions import NoReverseFoundError
 
 
 BASE_PATH = os.path.dirname(__file__)

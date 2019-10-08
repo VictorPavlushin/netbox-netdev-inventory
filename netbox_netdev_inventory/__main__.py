@@ -10,10 +10,10 @@ from netboxapi import NetboxAPI
 from tqdm import tqdm
 
 from . import __appname__, __version__
-from netbox_netprod_importer.config import get_config, load_config
-from netbox_netprod_importer.devices_list import parse_devices_yaml_def
-from netbox_netprod_importer.devices_list import parse_filter_yaml_def
-from netbox_netprod_importer.push import (
+from netbox_netdev_inventory.config import get_config, load_config
+from netbox_netdev_inventory.devices_list import parse_devices_yaml_def
+from netbox_netdev_inventory.devices_list import parse_filter_yaml_def
+from netbox_netdev_inventory.push import (
     NetboxDevicePropsPusher, NetboxInterconnectionsPusher
 )
 
