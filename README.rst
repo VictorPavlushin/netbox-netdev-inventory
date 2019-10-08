@@ -1,12 +1,9 @@
-====================
-Redesign in progress
-====================
-================================================
+==================================
 Netbox network production importer and inventory
-================================================
+==================================
 
-.. image:: https://travis-ci.org/VictorPavlushin/netbox-netdev-inventory.svg?branch=master
-    :target: https://travis-ci.org/VictorPavlushin/netbox-netdev-inventory
+.. image:: https://travis-ci.org/aruhier/netbox-netprod-importer.svg?branch=master
+    :target: https://travis-ci.org/aruhier/netbox-netprod-importer
 
 netbox-netprod-importer is a tool dedicated to help moving your current
 knowledge base to `Netbox <https://netbox.readthedocs.io/en/latest/>`_ as an
@@ -18,10 +15,26 @@ It is thought to be generic and infrastructure agnostic. It means that imported
 data will probably need to be adapted by some custom scripts, like the
 specification of roles, tennant and other properties on objects.
 
+
+Used by `Online.net <https://www.online.net>`_ on more than 5000 network
+devices.
+
+
+Looking for a new maintainer
+----------------------------
+
+This project has be done initially for `Online.net <https://www.online.net>`_,
+a company I (@aruhier) am not working for anymore. Therefore, I have now no
+need for this project, and will not be able to test any pull request.
+
+If anyone is interested to maintain it, please contact me by email (my address
+can be found in `my github profile <https://github.com/Anthony25>`_).
+
+
 Documentation
 -------------
 
-Documentation is available `here  <https://netbox-netdev-inventory.readthedocs.io/en/latest/>`_.
+Documentation is available `here  <https://netboxnetimporter.readthedocs.io/>`_.
 
 
 Features
@@ -53,7 +66,7 @@ Compatibility
 Tested on:
 
   - Cisco IOS (catalyst, 2960)
-  - Cisco Nexus (6000, 9000)
+  - Cisco Nexus 9000
   - Cisco ASR (but no specific parser written, some features are not available)
   - Juniper
 
@@ -63,15 +76,17 @@ Installation
 
 Run::
 
-  pip3 install netbox-netdev-inventory
+  pip3 install netbox-netprod-importer
 
-netbox-netdev-inventory is tested under python 3.5 to 3.7
+netbox-netprod-importer is tested under python 3.5 to 3.7
 
 
 Contributors
 ------------
 
-* Victor Pavlushin <victor@pavlushin.info>
+Tool initially developed by `Online.net  <https://www.online.net>`_ .
+
+* Anthony Ruhier <anthony.ruhier@gmail.com>
 
 
 License
