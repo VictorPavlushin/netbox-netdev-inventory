@@ -41,7 +41,7 @@ setup(
     setup_requires=setup_requirements,
     test_suite="tests",
     tests_require=test_requirements,
-    url="https://gitlab.infra.online.net/network/netbox_netdev_inventory",
+    url="https://github.com/VictorPavlushin/netbox-netdev-inventory",
     version=netbox_netdev_inventory.__version__,
     zip_safe=False,
     entry_points={
