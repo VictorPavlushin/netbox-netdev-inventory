@@ -1,7 +1,7 @@
 import cachetools
 import re
 
-from netbox_netprod_importer.vendors import _AbstractVendorParser
+from netbox_netdev_inventory.vendors import _AbstractVendorParser
 
 
 class CiscoParser(_AbstractVendorParser):

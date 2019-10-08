@@ -2,8 +2,8 @@ import re
 import logging
 from collections import defaultdict
 
-from netbox_netprod_importer.exceptions import TypeCouldNotBeParsedError
-from netbox_netprod_importer.vendors.constants import NetboxInterfaceTypes
+from netbox_netdev_inventory.exceptions import TypeCouldNotBeParsedError
+from netbox_netdev_inventory.vendors.constants import NetboxInterfaceTypes
 from .constants import InterfacesRegex
 from .base import CiscoParser
 

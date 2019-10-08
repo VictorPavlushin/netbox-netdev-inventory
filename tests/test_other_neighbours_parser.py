@@ -2,7 +2,7 @@ import os
 import napalm
 import pytest
 
-from netbox_netprod_importer.importer import (
+from netbox_netdev_inventory.importer import (
     napalm as importer_napalm, DeviceImporter
 )
 

@@ -10,13 +10,13 @@ import cachetools
 from netboxapi import NetboxMapper
 from tqdm import tqdm
 
-from netbox_netprod_importer.vendors.cisco import CiscoParser
-from netbox_netprod_importer.vendors.juniper import JuniperParser
-from netbox_netprod_importer.exceptions import (
+from netbox_netdev_inventory.vendors.cisco import CiscoParser
+from netbox_netdev_inventory.vendors.juniper import JuniperParser
+from netbox_netdev_inventory.exceptions import (
     DeviceNotFoundError, IPPushingError, NetInterfaceNotFoundError,
     NetIfPushingError
 )
-from netbox_netprod_importer.tools import (
+from netbox_netdev_inventory.tools import (
     generic_netbox_error, is_macaddr, macaddr_to_int
 )
 

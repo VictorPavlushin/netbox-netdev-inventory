@@ -31,21 +31,21 @@ setup(
     install_requires=requirements,
     long_description=readme,
     include_package_data=True,
-    keywords="netbox_netprod_importer",
-    name="netbox_netprod_importer",
-    packages=find_packages(include=["netbox_netprod_importer", "netbox_netprod_importer.*"]),
+    keywords="netbox_netdev_inventory",
+    name="netbox_netdev_inventory",
+    packages=find_packages(include=["netbox_netdev_inventory", "netbox_netdev_inventory.*"]),
     package_data={
-        "netbox_netprod_importer": ["templates/**"]
+        "netbox_netdev_inventory": ["templates/**"]
     },
     setup_requires=setup_requirements,
     test_suite="tests",
     tests_require=test_requirements,
-    url="https://gitlab.infra.online.net/network/netbox_netprod_importer",
+    url="https://gitlab.infra.online.net/network/netbox_netdev_inventory",
     version="0.2.1",
     zip_safe=False,
     entry_points={
         'console_scripts': [
-            'netbox-netprod-importer = netbox_netprod_importer.__main__:parse_args',
+            'netbox-netdev-inventory = netbox_netdev_inventory.__main__:parse_args',
         ],
     }
 )

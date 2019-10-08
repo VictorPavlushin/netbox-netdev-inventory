@@ -1,6 +1,6 @@
 from requests.exceptions import HTTPError
 
-from netbox_netprod_importer.exceptions import GenericNetboxError
+from netbox_netdev_inventory.exceptions import GenericNetboxError
 
 
 def is_macaddr(macaddr):

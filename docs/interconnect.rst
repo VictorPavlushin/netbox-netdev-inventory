@@ -23,15 +23,21 @@ Usage
 The interconnections feature can be started through the subcommand
 ``interconnect``::
 
-    usage: netbox-netprod-importer interconnect [-h] [-u USER] [-p] [-t THREADS] [-v LEVEL] DEVICES
+    usage: netbox-netdev-inventory interconnect [-h] [-u USER] [-p] [-t THREADS] [-v LEVEL] [ -f DEVICES | -F FILTER ]
 
-    positional arguments:
-      DEVICES               Yaml file containing a definition of devices to poll
+    arguments:
+      -f devices, --file devices
+                            Yaml file containing a definition of devices to poll
+      or
+      -F FILTER, --filter FILTER
+                            Yaml file containing the device definition filter for polling from NetBox
 
     optional arguments:
       -h, --help            show this help message and exit
       -u USER, --user USER  user to use for connections to the devices
       -p, --password        ask for credentials for connections to the devices
+      -P PASSWORD, --Password PASSWORD
+                            credentials for connections to the devices
       -t THREADS, --threads THREADS
                             number of threads to run
       --overwrite           overwrite data already pushed
@@ -43,7 +49,7 @@ By default, connecting to the devices will use the default authentication
 mechanism of the napalm driver, which is normally the current user and no
 password/authentication by key. To change this behavior, the ``-u/--user`` and
 ``-p/--password`` options can be used to specify the user to use, and tells
-netbox-netprod-importer to ask for the password to use.
+netbox-netdev-inventory to ask for the password to use.
 
 The process is multithreaded, and split by device. The default number of
 threads is 10, but can be changed with the ``-t/--threads`` option.
@@ -83,20 +89,64 @@ Considering a yaml file ``~/importer/devices.yml`` containing these devices::
 
 To simply apply the import on these devices, do::
 
-    $ netbox-netprod-importer interco ~/importer/devices.yml
+    $ netbox-netdev-inventory interco -f ~/importer/devices.yml
 
 Considering that the current user is named ``foo``, if a password is needed for
 this user to connect to these devices, do::
 
-    $ netbox-netprod-importer interco -p ~/importer/devices.yml
+    $ netbox-netdev-inventory interco -p  -f ~/importer/devices.yml
 
 To use a different user, for example `bar` do::
 
-    $ netbox-netprod-importer interco -u bar -p ~/importer/devices.yml
+    $ netbox-netdev-inventory interco -u bar -p -f ~/importer/devices.yml
 
 And to use more threads::
 
-    $ netbox-netprod-importer interco -u bar -p -t 30 ~/importer/devices.yml
+    $ netbox-netdev-inventory interco -u bar -p -t 30 -f ~/importer/devices.yml
+
+Listing devices from NetBox.
+Considering a yaml file ``~/importer/filter.yml`` containing this filter::
+
+    discovery_protocol:
+        ios: cdp
+        nxos: multiple
+        nxos_ssh: multiple
+        junos: lldp
+
+    filter:
+        q:
+        region:
+            - england
+        site:
+            - london
+            - birmingham
+        rack:
+        status: 1
+        role:
+        tenant_group:
+        tenant:
+            - it
+        manufacturer:
+            - cisco
+        device_type:
+        mac_address:
+        has_primary_ip: True
+        platform:
+        virtual_chassis_member:
+        console_ports:
+        console_server_ports:
+        power_ports:
+        power_outlets:
+        interfaces:
+        pass_through_ports:
+
+Full online documentation on filter keys is available on a running NetBox instance
+in /api/docs/, section GET /dcim/devices/
+
+We will choose london and birmingham sites in England, the equipment is active,
+the owner is it, the manufacturer is cisco and has a primary ip::
+
+    $ netbox-netdev-inventory interco -u bar -p -t 30 --overwrite -F ~/importer/filter.yml
 
 
 Configuration
@@ -162,7 +212,7 @@ without this domain name.
 
 On some platforms, the network interface can be exposed via LLDP as aggregated.
 For example, Cisco can show an interface named ``GigabitEthernet0/1`` as
-``Ge0/1``, what can be an issue because netbox-netprod-importer actually
+``Ge0/1``, what can be an issue because netbox-netdev-inventory actually
 imports the full interface name (``GigabitEthernet0/1``). To help finding them
 in Netbox, all possible form of interface names are written inside the custom
 parsers, and are tested in case nothing is found.

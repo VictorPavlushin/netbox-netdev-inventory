@@ -5,7 +5,7 @@ import concurrent.futures
 from concurrent.futures import ThreadPoolExecutor
 import sys
 from netboxapi import NetboxAPI, NetboxMapper
-from netbox_netprod_importer.config import get_config
+from netbox_netdev_inventory.config import get_config
 import tqdm
 
 

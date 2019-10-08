@@ -2,8 +2,8 @@ import os
 import napalm
 import pytest
 
-from netbox_netprod_importer.vendors.cisco import NXOSParser
-from netbox_netprod_importer.vendors.constants import NetboxInterfaceTypes
+from netbox_netdev_inventory.vendors.cisco import NXOSParser
+from netbox_netdev_inventory.vendors.constants import NetboxInterfaceTypes
 
 
 BASE_PATH = os.path.dirname(__file__)

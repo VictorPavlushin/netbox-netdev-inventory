@@ -5,7 +5,7 @@ import os
 import yaml
 import urllib3
 
-from netbox_netprod_importer import __appname__
+from netbox_netdev_inventory import __appname__
 
 
 logger = logging.getLogger("virt_backup")

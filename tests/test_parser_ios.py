@@ -3,7 +3,7 @@ import napalm
 import pytest
 import json
 
-from netbox_netprod_importer.vendors.cisco import IOSParser
+from netbox_netdev_inventory.vendors.cisco import IOSParser
 
 BASE_PATH = os.path.dirname(__file__)
 
