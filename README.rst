@@ -15,11 +15,6 @@ It is thought to be generic and infrastructure agnostic. It means that imported
 data will probably need to be adapted by some custom scripts, like the
 specification of roles, tennant and other properties on objects.
 
-
-Used by `Online.net <https://www.online.net>`_ on more than 5000 network
-devices.
-
-
 Documentation
 -------------
 
