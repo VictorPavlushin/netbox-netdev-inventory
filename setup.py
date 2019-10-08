@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 from setuptools import setup, find_packages
+import netbox_netdev_inventory
 
 with open("README.rst") as readme_file:
     readme = readme_file.read()
@@ -17,8 +18,8 @@ test_requirements = [
 ]
 
 setup(
-    author="Scaleway",
-    author_email="contact@scaleway.com",
+    author=netbox_netdev_inventory.__author__,
+    author_email=netbox_netdev_inventory.__email__,
     classifiers=[
         "Intended Audience :: Developers",
         "Natural Language :: English",
@@ -41,7 +42,7 @@ setup(
     test_suite="tests",
     tests_require=test_requirements,
     url="https://gitlab.infra.online.net/network/netbox_netdev_inventory",
-    version="0.2.1",
+    version=netbox_netdev_inventory.__version__,
     zip_safe=False,
     entry_points={
         'console_scripts': [
