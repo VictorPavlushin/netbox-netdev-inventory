@@ -4,7 +4,6 @@ import logging
 import napalm
 from tqdm import tqdm
 import yaml
-import sys
 
 from netbox_netdev_inventory.importer import DeviceImporter
 
@@ -50,7 +49,7 @@ def parse_filter_yaml_def(filter_yaml, creds=None):
             raise Exception("Not for one platform napalm_driver is not "
                             "defined")
 
-        devlist = netbox_api.get("dcim/devices/", params=yml["filter"].items())
+        devlist = netbox_api.get("dcim/devices/", params=yml["filter"])
         for device in devlist["results"]:
             if not device.get("platform") or \
                     not platforms.get(device["platform"]["id"]):
